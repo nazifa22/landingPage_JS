@@ -130,6 +130,12 @@ header .navbar .navbar-toggler:hover {
   width: 470px;
 }
 
+@media screen and (max-width: 767px) {
+  .jumborton .content {
+    width: 100%;
+  }
+}
+
 .jumborton button {
   background: #F87853;
   border: 1px solid #F87853;

@@ -126,6 +126,9 @@ header
     .content
         @extend %content
         width: 470px
+
+        @media screen and (max-width: 767px)
+            width: 100%
     
     button
         @include button($coral, $coral, 186, 48, 16)
