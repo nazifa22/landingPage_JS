@@ -12,63 +12,63 @@ let teams = [
     {
         id: 1,
         img: 'assets/images/char-1.png',
-        social_handle: '../assets/images/fb.png',
+        social_handle: 'assets/images/fb.png',
         name: 'Hugo Saavedra',
         designation: 'Developer'
     },
     {
         id: 2,
         img: 'assets/images/char2.png',
-        social_handle: '../assets/images/inst.png',
+        social_handle: 'assets/images/inst.png',
         name: 'Angu Tamba',
         designation: 'Manager'
     },
     {
         id: 3,
         img: 'assets/images/char3.png',
-        social_handle: '../assets/images/tw.png',
+        social_handle: 'assets/images/tw.png',
         name: 'Oka Tomoaki',
         designation: 'Designer'
     },
     {
         id: 4,
         img: 'assets/images/char-1.png',
-        social_handle: '../assets/images/fb.png',
+        social_handle: 'assets/images/fb.png',
         name: 'Hugo Saavedra',
         designation: 'Developer'
     },
     {
         id: 5,
         img: 'assets/images/char2.png',
-        social_handle: '../assets/images/inst.png',
+        social_handle: 'assets/images/inst.png',
         name: 'Angu Tamba',
         designation: 'Manager'
     },
     {
         id: 6,
         img: 'assets/images/char3.png',
-        social_handle: '../assets/images/tw.png',
+        social_handle: 'assets/images/tw.png',
         name: 'Oka Tomoaki',
         designation: 'Designer'
     },
     {
         id: 7,
         img: 'assets/images/char-1.png',
-        social_handle: '../assets/images/fb.png',
+        social_handle: 'assets/images/fb.png',
         name: 'Hugo Saavedra',
         designation: 'Developer'
     },
     {
         id: 8,
         img: 'assets/images/char2.png',
-        social_handle: '../assets/images/inst.png',
+        social_handle: 'assets/images/inst.png',
         name: 'Angu Tamba',
         designation: 'Manager'
     },
     {
         id: 9,
         img: 'assets/images/char3.png',
-        social_handle: '../assets/images/tw.png',
+        social_handle: 'assets/images/tw.png',
         name: 'Oka Tomoaki',
         designation: 'Designer'
     }
