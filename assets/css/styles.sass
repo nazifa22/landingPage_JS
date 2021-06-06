@@ -1,0 +1,799 @@
+*
+    margin: 0
+    padding: 0
+
+html
+    scroll-behavior: smooth
+
+// typography
+$title_font: Inria Serif
+$body_font: Open Sans
+
+// colors
+$bunting: #131B42
+$coral: #F87853
+$white: #FFFFFF
+$cloud_burst: #212B60
+$cornflower_blue: #5D71E9
+$cinderella: #FBD3C9
+$caption_font: rgba(19, 27, 66, 0.502378)
+$smokewhite: rgba(255, 255, 255, 0.502972)
+$rhino: #2f3a62
+$gradient_one: linear-gradient(180deg, rgba(31, 44, 95, 0.5) 0%, rgba(249, 118, 74, 0.5) 100%), $coral
+$gradient_two: linear-gradient(180deg, #5D72E4 0%, #FF9F81 100%), $coral
+$gradient_three: linear-gradient(180deg, #FBD4C9 0%, #6A7BE2 100%), $coral
+$gradient_four: linear-gradient(270deg, #5D72E4 0%, #FF9F81 100%), $coral
+$gradient_five: linear-gradient(270deg, #FBD4C9 0%, #6A7BE2 100%), $coral
+$gradient_six: linear-gradient(270deg, rgba(31, 44, 95, 0.5) 0%, rgba(249, 118, 74, 0.5) 100%), #F87853
+$gradients: $gradient_one, $gradient_two, $gradient_three, $gradient_four, $gradient_five, $gradient_six
+
+//mixins
+@mixin button($btn-color, $btn-border, $width, $height, $font) 
+    background: $btn-color
+    border: 1px solid $btn-border
+    width: $width + px
+    height: $height + px
+    font-size: $font + px
+    padding: 0
+
+    @if($btn-color == transparent)
+        color: $btn-border
+        &:hover
+            background: $btn-border !important
+            border: 1px solid $btn-border
+
+    @else
+        &:hover
+            background: transparent !important
+            border: 1px solid $btn-border
+            color: $btn-color !important
+
+// extends
+%sub-title
+    font: 700 18px/32px $body_font
+    color: $coral
+    text-transform: uppercase
+
+%title
+    font: 700 72px/80px $title_font
+    color: $bunting
+
+    @media screen and (max-width: 767px)
+        font-size: 40px
+        line-height: 48px
+
+%content
+    font: 400 20px/32px $title_font
+    color: $bunting
+
+header
+    background: linear-gradient(180deg, rgba(250, 126, 74, 0.15) 0%, rgba(106, 123, 227, 0.15) 100%), $white;
+
+    .navbar-nav
+        @media screen and (max-width: 991px)
+            background: $white
+            
+
+    .navbar
+        padding: 20px 0
+
+        .navbar-brand
+            img
+                width: 100%
+        
+        .nav-link
+            color: $bunting
+            font-family: $body_font
+            font-size: 16px
+            line-height: 42px
+            font-weight: 400
+            padding-left: 1rem !important
+            padding-right: 1rem !important
+            
+            @media screen and (max-width: 991px)
+                font-size: 18px
+
+        button
+            @include button(transparent, $coral, 138, 48, 16)
+
+        .navbar-toggler
+            @include button($white, $white, 48, 48, 14)
+            padding: 0
+
+.jumborton
+    padding: 100px 0 130px
+    position: relative
+    overflow-x: hidden
+
+    @media screen and (max-width: 991px)
+        padding: 30px 0 0
+
+    .subtitle
+        @extend %sub-title
+
+    .title
+        @extend %title
+        margin-bottom: 30px
+
+        @media screen and (max-width: 767px)
+            font-size: 56px
+            line-height: 64px
+            margin-bottom: 5px
+    
+    .content
+        @extend %content
+        width: 470px
+    
+    button
+        @include button($coral, $coral, 186, 48, 16)
+        text-transform: capitalize
+        margin-top: 20px
+
+        @media screen and (max-width: 991px)
+            margin-bottom: 40px
+
+        @media screen and (max-width: 767px)
+            margin-top: 0
+    
+    .image
+        @media only screen and (max-width: 1300px)
+            width: 100%
+            margin-left: 25%
+        
+        @media only screen and (max-width: 991px)
+            width: 117%
+            margin-left: 25%
+
+.services
+    padding: 100px 0
+
+    @media screen and (max-width: 767px)
+        padding: 90px 0 70px
+
+    .dev-tools
+        display: flex
+        justify-content: space-between
+
+        img
+            @media screen and (max-width: 991px)
+                width: 75px
+
+            @media screen and (max-width: 767px)
+                padding-bottom: 40px
+                width: auto
+                    
+        
+        @media screen and (max-width: 767px)
+            flex-direction: column
+            align-items: center;
+
+    .service
+        padding: 100px 0 
+
+        @media screen and (max-width: 767px)   
+            padding: 60px 0 50px
+
+        .title 
+            @extend %title
+        
+        .content
+            @extend %content
+            margin-bottom: 0
+
+            @media screen and (max-width: 767px)
+                font-size: 16px
+                line-height: 32px
+
+    .dev-process
+        img
+            padding: 40px
+            border-radius: 15px
+            box-shadow: 0px 20px 40px rgba(0, 0, 67, 0.1)
+            margin-bottom: 30px
+
+        .shape_1
+            background: $cloud_burst
+        
+        .shape_2
+            background: $cornflower_blue
+
+            @media screen and (max-width: 991px)
+                margin-top: 35px
+        
+        .shape_3
+            background: $cinderella
+
+            @media screen and (max-width: 991px)
+                margin-top: 35px
+
+        h3
+            font-family: $title_font
+            font-size: 40px
+            font-style: normal
+            font-weight: 700
+            line-height: 48px
+        
+        p
+            font-family: $body_font
+            font-size: 16px
+            font-style: normal
+            font-weight: 400
+            line-height: 32px
+            color: $caption_font
+            width: 250px
+            margin-bottom: 0
+
+            @media screen and (max-width: 991px)
+                width: 100%
+
+.explore
+    position: relative
+    padding: 100px 0 60px
+    
+    @media screen and (max-width: 767px)
+        padding-bottom: 80px
+
+    &::after
+        position: absolute
+        content: ''
+        background: url(../../assets/images/Group2.png)
+        width: 100%
+        height: 700px
+        top: 0
+        z-index: -1
+        background-size: auto
+        background-repeat: no-repeat
+
+        @media screen and (max-width: 991px)
+            width: 35%
+            height: 450px
+
+        @media screen and (max-width: 767px)
+            width: 100%
+            height: 866px
+
+    img
+        width: 100% 
+
+    .title
+        @extend %title
+        margin-bottom: 35px  
+
+    .content
+        @extend %content
+
+    .lists
+        padding: 0
+
+        li
+            list-style-type: none
+            display: flex
+            align-items: center
+            margin-bottom: 15px
+            font: 400 16px/32px $body_font
+            color: $caption_font
+
+            div
+                width: 32px
+                height: 32px
+                background: $coral
+                display: flex
+                justify-content: center
+                align-items: center
+                border-radius: 100% 
+                margin-right: 15px 
+
+                img
+                    width: 15px   
+
+    button
+        @include button(transparent, $coral, 170, 46, 16)
+        margin-top: 20px
+
+section.features
+    background: url('../../assets/images/Oval(2).png')
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    padding: 140px 0 100px
+
+    @media screen and (max-width: 767px)
+        padding: 90px 0
+
+    .title
+        @extend %title
+        margin-bottom: 70px
+
+        @media screen and (max-width: 767px)
+            margin-bottom: 50px
+
+    .row 
+        .col-md-4
+            &:nth-child(6n+1)
+                .icons
+                    background: $gradient_one 
+            
+            &:nth-child(6n+2)
+                .icons
+                    background: $gradient_two 
+            
+            &:nth-child(6n+3)
+                .icons
+                    background: $gradient_three
+            
+            &:nth-child(6n+4)
+                .icons
+                    background: $gradient_four
+            
+            &:nth-child(6n+5)
+                .icons
+                    background: $gradient_five
+
+            &:nth-child(6n)
+                .icons
+                    background: $gradient_six
+
+    .icons 
+        width: 80px
+        height: 80px
+        border-radius: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-bottom: 20px
+
+    h4
+        font: bold 24px/32px $title_font
+        color: $bunting
+        margin-bottom: 10px
+    
+    p
+        font: normal 16px/32px $body_font
+        color: $caption_font
+        margin-bottom: 40px
+
+.portfolio
+    padding: 100px 0
+
+    .title
+        @extend %title
+        
+        @media screen and (max-width: 767px)
+            margin-bottom: 15px
+            font-size: 40px
+            line-height: 48px
+
+    .content
+        @extend %content
+
+        @media screen and (max-width: 767px)
+            font-size: 16px
+            line-height: 32px
+
+    .single_portfolio
+        margin: 100px 0 0
+        
+        @media screen and (max-width: 767px)
+            margin: 40px 0 0
+
+    .portfolio_cover
+        width: 100%
+        height: 384px
+        background-size: cover
+        border-radius: 6px
+        position: relative
+        padding: 10px
+        transition: all 0.5s linear
+        margin-bottom: 30px
+        background-repeat: no-repeat
+
+        @media screen and (max-width: 1200px)
+            height: 300px
+
+        @media screen and (max-width: 767px)
+            background-size: cover
+            height: 380px
+
+        &:hover
+            .portfolio_info
+                transform: scale(1,1)
+                transition: all 0.5s linear
+
+    .portfolio_info
+        background: $white
+        height: 100%
+        padding: 30px 20px
+        position: relative
+        transform: scale(0,0)
+
+        img
+            width: 32px
+            position: absolute
+            right: 30px
+
+        div
+            position: absolute
+            bottom: 30px
+
+            h4
+                @extend %sub-title
+                text-transform: uppercase
+            
+            p
+                @extend %content
+                margin: 0
+                font-size: 24px
+    
+    button
+        @include button(transparent, $coral, 170, 48, 16)
+        text-transform: capitalize
+        margin-top: 30px
+
+.testimonial
+    .testimonial_container
+        background: url(../../assets/images/testimonial-bg.png)
+        background-size: cover
+        padding: 70px 30px
+        text-align: center
+        border-radius: 6px
+
+        @media screen and (max-width: 767px)
+            padding: 70px 15px 40px
+
+        .title
+            font: 700 56px/64px $title_font
+            color: $white
+
+            @media screen and (max-width: 767px)
+                font-size: 40px
+                line-height: 48px
+                margin-bottom: 15px
+
+        .content
+            @extend %content
+            font-size: 16px
+            color: $smokewhite
+            width: 770px
+            margin: 0 auto
+            padding: 0 0 40px
+
+            @media screen and (max-width: 991px)
+                width: 100%
+
+        .slide
+            padding-bottom: 115px;
+
+        .carousel-item
+            .content
+                @extend %content
+                color: $white
+                padding-bottom: 20px
+
+            h4
+                font: 700 24px/32px $title_font
+                color: $white
+                margin: 0
+
+            span
+                @extend %content
+                font-size: 16px
+                color: $smokewhite
+        
+        .carousel-indicators [data-bs-target]
+            background-image: url(../../assets/images/Oval.png)
+            background-color: transparent !important
+            width: 70px
+            height: 70px
+            background-size: contain
+            margin: 0 10px
+            background-position: center
+            background-repeat: no-repeat
+
+            @media screen and (max-width: 767px)
+                width: 50px
+                height: 50px
+
+            @media screen and (max-width: 500px)
+                width: 20px
+                height: 20px
+
+        .carousel-indicators .active
+            border: 1px solid $coral
+            border-radius: 100%
+            margin: 0 10px
+            background-size: 85%
+            padding: 10px
+
+        .dev-tools
+            margin: 30px 0 0
+
+            .col
+                @media only screen and (max-width: 767px)
+                    flex: 1 0 100%;
+
+            img
+                width: auto
+
+                @media only screen and (max-width: 991px)
+                    width: 100%
+                
+                @media only screen and (max-width: 767px)
+                    width: auto
+                    margin-bottom: 40px
+
+.teams
+    padding: 90px 0
+
+    .title
+        @extend %title
+
+        @media screen and (max-width: 767px)
+            font-size: 40px
+            line-height: 48px
+
+    .content
+        @extend %content
+
+        @media screen and (max-width: 767px)
+            font-size: 16px
+            line-height: 32px
+
+    .owl-theme
+        margin: 60px 0 0
+
+    .team_member
+        position: relative
+
+    .icon
+        position: absolute
+        border: 0
+        bottom: 80px
+        width: auto !important
+        right: 5px
+
+    h5
+        font: 700 24px/32px $title_font
+        color: $bunting
+        margin: 15px 0 0
+
+    p
+        @extend %content
+        color: $caption_font
+        margin: 0
+
+        @media screen and (max-width: 767px)
+            font-size: 16px
+            line-height: 32px
+
+    .owl-nav
+        display: none
+
+    .owl-dots
+        margin-top: 30px
+
+    .owl-theme .owl-dots .owl-dot.active span, 
+    .owl-theme .owl-dots .owl-dot:hover span
+        background: $coral
+
+    .owl-theme .owl-dots .owl-dot span
+        background: lighten($coral, 25%)
+
+.blogs
+    .title
+        @extend %title
+
+        @media screen and (max-width: 767px)
+            font-size: 40px
+            line-height: 48px
+    
+    .content
+        @extend %content
+
+        @media screen and (max-width: 767px)
+            font-size: 16px
+            line-height: 32px
+
+    .owl-theme
+        margin: 50px 0 0
+
+    img
+        margin-bottom: 20px
+
+    p
+        font: 700 24px/32px $title_font
+        color: $bunting
+        margin: 15px 0 0
+
+    h5
+        @extend %sub-title
+
+    .info
+        display: flex
+        align-items: center
+
+        @media only screen and (min-width: 600px) and (max-width: 991px)
+            display: grid
+
+        p,
+        span
+            font: 400 16px/32px $body_font
+            margin: 0 25px 0 0
+
+        span
+            color: $caption_font
+
+    .owl-nav
+        display: none
+
+    .owl-dots
+        margin-top: 30px
+
+    .owl-theme .owl-dots .owl-dot.active span, 
+    .owl-theme .owl-dots .owl-dot:hover span
+        background: $coral
+
+    .owl-theme .owl-dots .owl-dot span
+        background: lighten($coral, 25%)
+
+
+.contact
+    margin: 100px 0
+
+    .contact_section
+        background-image: url(../../assets/images/CTA.png)
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center
+        border-radius: 6px
+        padding: 80px
+        background-color: $rhino
+        
+        @media screen and (max-width: 991px)
+            padding: 80px 15px
+
+        .title
+            font: 700 56px/64px $title_font
+            color: $white
+            margin-bottom: 15px
+
+            @media screen and (max-width: 767px)
+                font-size: 40px
+                line-height: 48px
+
+        .content
+            @extend %content
+            color: $smokewhite
+            width: 470px
+
+            @media screen and (max-width: 767px)
+                font-size: 16px
+                line-height: 32px
+
+            @media screen and (max-width: 991px)
+                width: 100%
+
+        .form_container
+            background: $white
+            padding: 50px 30px
+            border-radius: 7px
+
+            @media screen and (max-width: 991px)
+                padding: 30px
+                margin: 20px 0 10px
+
+            @media screen and (max-width: 600px)
+                padding: 20px
+
+        input,
+        textarea
+            width: 100%
+
+        input
+            height: 48px
+
+        textarea
+            height: 96px
+
+        a
+            @include button($coral, $coral, 100, 48, 14)
+            display: flex
+            align-items: center
+            justify-content: center
+
+        .form-floating>label
+            font: 400 16px/32px $body_font
+            color: $caption_font
+
+    .form-floating.textarea> .form-control:focus~label, 
+    .form-floating.textarea> .form-control:not(:placeholder-shown)~label,
+    .form-floating.textarea >.form-select~label
+        opacity: .65
+        transform: scale(.85) translateY(-1.5rem) translateX(.15rem)
+
+footer
+    img
+        width: auto
+
+        @media screen and (max-width: 767px)
+            margin-bottom: 40px
+
+    h4
+        @extend %sub-title
+
+    .socials
+        display: flex
+        justify-content: space-between
+        width: 50%
+        align-items: center
+        margin-top: 10px
+        position: relative
+
+        @media screen and (max-width: 767px)
+            width: 30%
+
+    ul
+        padding: 0
+
+        @media screen and (max-width: 767px)
+            margin-bottom: 30px
+
+        li
+            list-style-type: none
+            
+            a
+                font: 400 16px/32px $body_font 
+                color: $bunting
+                text-decoration: none
+                text-transform: capitalize
+
+    
+            
+    a
+        font: 400 16px/32px $body_font 
+        color: $bunting
+        text-decoration: none
+    
+    .copyright
+        position: relative
+
+        &::after
+            content: ''
+            position: absolute
+            width: 100%
+            height: 1px
+            background-color: black
+            opacity: 0.1
+            top: -40px
+
+            @media screen and (max-width: 575px)
+                left: 2.5%
+                width: 95%
+
+        p
+            font: 400 16px/32px $body_font 
+            color: $caption_font
+
+            @media screen and (max-width: 767px)
+                margin: 0 auto
+                width: 146px
+                text-align: center
+
+
+        .terms_and_conditions
+            display: flex
+            justify-content: flex-end
+
+            @media screen and (max-width: 767px)
+                margin-top: 20px
+                justify-content: center
+
+            a
+                font: 400 16px/32px $body_font 
+                color: $bunting
+
+                &:not(:last-child)
+                    margin-right: 30px
+
+.container 
+    @media screen and (min-width: 1400px)
+        max-width: 1440px
