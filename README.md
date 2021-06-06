@@ -1,2 +1,8 @@
 # landingPage_JS
-A simple landing page using dynamic data
+
+#html5
+#CSS3
+#CSS Pre-processor | SASS
+#Owl Carousel 2
+#JSON data
+#Responsive
