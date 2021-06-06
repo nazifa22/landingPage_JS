@@ -5,7 +5,7 @@ var myCarousel = document.querySelector('#myCarousel')
 // })
 
 let portfolio_div = document.querySelector('.single_portfolio');
-let portfolios = ['assets/images/blog1.png', 'assets/images/blog2.png', 'assets/images/blog3.png', 'assets/images/blog4.png', '../assets/images/blog5.png', '../assets/images/blog6.png']
+let portfolios = ['assets/images/blog1.png', 'assets/images/blog2.png', 'assets/images/blog3.png', 'assets/images/blog4.png', 'assets/images/blog5.png', 'assets/images/blog6.png']
 
 let team_div = document.querySelector('.team_content')
 let teams = [
